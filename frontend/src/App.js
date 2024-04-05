@@ -4,22 +4,24 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import PdfReviewer from "./pages/PdfReviewer"
 import Navbar from './components/Navbar'
+import MayShowNavBar from './components/MayShowNavBar'
 
 function App() {
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <MayShowNavBar><Navbar /></MayShowNavBar>
+
         <div className="pages">
           <Routes>
-            <Route 
-              path="/" 
-              element={<Home />} 
+            <Route
+              path="/"
+              element={<Home />}
             />
-             <Route 
-              path="/PdfReviewer" 
-              element={<PdfReviewer />} 
+            <Route
+              path="/pdf"
+              element={<PdfReviewer />}
             />
           </Routes>
         </div>
