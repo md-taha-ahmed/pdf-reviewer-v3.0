@@ -1,10 +1,25 @@
+import {
+    PdfViewerComponent, Toolbar, Magnification, Navigation, LinkAnnotation, BookmarkView,
+    ThumbnailView, Print, TextSelection, Annotation, TextSearch, FormFields, FormDesigner, Inject
+} from '@syncfusion/ej2-react-pdfviewer';
 const PdfReviewer = () => {
 
     return (
-      <div className="pdfReviewer">
-        <h2>PdfReviewer</h2>
-      </div>
+        <div>
+            <div className='control-section'>
+                {/* Render the PDF Viewer */}
+                <PdfViewerComponent
+                    id="container"
+                    documentPath="https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf"
+                    serviceUrl="https://services.syncfusion.com/react/production/api/pdfviewer"
+                    style={{ 'height': '730px' }}>
+
+                    <Inject services={[Toolbar, Magnification, Navigation, Annotation, LinkAnnotation, BookmarkView,
+                        ThumbnailView, Print, TextSelection, TextSearch, FormFields, FormDesigner]} />
+                </PdfViewerComponent>
+            </div>
+        </div>
     )
-  }
-  
-  export default PdfReviewer
+}
+
+export default PdfReviewer
