@@ -8,7 +8,18 @@ const {
     deleteArticle,
     updateArticle
 } = require("../controllers/articleController");
+const multer = require('multer')
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads')
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now()
+        cb(null, uniqueSuffix + file.originalname)
+    }
+})
 
+const upload = multer({ storage: storage })
 // GET all articles
 router.get('/', getArticles)
 
@@ -16,7 +27,7 @@ router.get('/', getArticles)
 router.get('/:id', getArticle)
 
 // POST a new article
-router.post('/', createArticle)
+router.post('/', upload.single('file'), createArticle)
 
 // DELETE a article
 router.delete('/:id', deleteArticle)
