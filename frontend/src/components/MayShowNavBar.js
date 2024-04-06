@@ -7,7 +7,6 @@ const MayShowNavBar = ({children}) => {
     const [showNavBar, setShowNavBar] = useState(false)
 
     useEffect(() => {
-        console.log('this location:', location)
         if (location.pathname === '/pdf') {
             setShowNavBar(false)
         } else {
