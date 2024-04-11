@@ -38,7 +38,7 @@ const ArticleForm = () => {
             <input
                 type="text"
                 onChange={(e) => setEmail(e.target.value)}
-
+                placeholder='email'
                 required
             />
 
