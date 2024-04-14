@@ -10,7 +10,7 @@ const PdfReviewer = () => {
                 {/* Render the PDF Viewer */}
                 <PdfViewerComponent
                     id="container"
-                    documentPath="https://cdn.syncfusion.com/content/pdf/pdf-succinctly.pdf"
+                    documentPath="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
                     serviceUrl="https://services.syncfusion.com/react/production/api/pdfviewer"
                     style={{ 'height': '730px' }}>
 
