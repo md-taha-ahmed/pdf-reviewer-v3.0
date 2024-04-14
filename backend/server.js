@@ -3,10 +3,11 @@ const cors = require('cors')
 const express = require('express')
 const mongoose = require('mongoose')
 const articleRoutes = require('./routes/articles')
-
 // express app
 const app = express()
 app.use(cors())
+
+app.use("/files", express.static("uploads"))
 
 // middleware
 app.use(express.json())
